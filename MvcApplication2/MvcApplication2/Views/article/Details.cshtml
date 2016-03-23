@@ -1,0 +1,29 @@
+﻿@model MvcApplication2.Models.article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>article</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.articlecontent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.articlecontent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.articleault)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.articleault)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.articleid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

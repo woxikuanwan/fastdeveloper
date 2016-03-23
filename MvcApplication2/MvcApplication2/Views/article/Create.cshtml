@@ -1,0 +1,41 @@
+﻿@model MvcApplication2.Models.article
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>article</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.articlecontent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.articlecontent)
+            @Html.ValidationMessageFor(model => model.articlecontent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.articleault)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.articleault)
+            @Html.ValidationMessageFor(model => model.articleault)
+        </div>
+        <div><input type="text" value="@ViewData["test1"]" name="text1" id="text1" /></div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

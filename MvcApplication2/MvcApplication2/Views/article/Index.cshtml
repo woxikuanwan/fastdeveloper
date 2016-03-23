@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MvcApplication2.Models.article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div><img src="../../未标题-1.png" /></div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.articlecontent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.articleault)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.articlecontent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.articleault)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.articleid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.articleid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.articleid })
+        </td>
+    </tr>
+}
+
+</table>
